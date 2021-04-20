@@ -1,10 +1,7 @@
 #include "../Headers/Board.h"
-#include "../Headers/Move.h"
-#include "../Headers/PieceMask.h"
-//#include "../Headers/Helper.h"
+
 #include <cstdint>
 #include <iostream>
-
 
 
 void print(uint64_t num){
@@ -61,18 +58,6 @@ void print(uint64_t num){
 
 
 int main(){
-  // Move m = Move(5,10,4);
-  // std::cout <<  m.move << std::endl;
-  // std::cout << (int) m.isCapture() << std::endl;
-  // std::cout << std::hex << getBishopMask(7) << std::endl;
-  //print(Board::whiteBishops);
-
-  setMasks();
-  // print(WP0);
-  // print(WP1);
-  // print(WP7);
-  // print(NFILEH);
-  // print(bpMask[40]);
-  // print(bpMask[35]);
-  //print(knightMask[27]);
+  init();
+  print(masks[5][0]);
 }

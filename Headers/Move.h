@@ -5,20 +5,35 @@ class Move {
 
 
 public:
-  uint16_t move = 0;
-  Move(uint8_t origin, uint8_t destin, uint8_t flags){
-    move += (uint16_t) origin;
-    move <<= 6;
-    move += (uint16_t) destin;
-    move <<= 4;
-    move += (uint16_t) flags;
+  uint8_t origin;
+  uint8_t destin;
+  bool isCapture;
+  bool isDoublePush;
+  bool isKingCastle;
+  bool isQueenCastle;
+  bool isEP;
+  bool isKnightPromo;
+  bool isBishopPromo;
+  bool isRookPromo;
+  bool isQueenPromo;
+
+
+  Move(uint8_t o, uint8_t d) {
+    origin = o;
+    destin = d;
   }
-  uint8_t getOrigin(){return (uint8_t)((0xFC00 & move) >> 10);}
-  uint8_t getDestin(){return (uint8_t)((0x03F0 & move) >> 4);}
-  bool isPromotion() {return 8 & move;}
-  bool isCapture()   {return 4 & move;}
-  bool isSpecial1()  {return 2 & move;}
-  bool isSpecial2()  {return 1 & move;}
 
-
+  Move(uint8_t o, uint8_t d, bool capture, bool doublePawn, bool kc, bool qc, bool ep, bool knightp, bool bishopp, bool rookp, bool queenp){
+    origin = o;
+    destin = d;
+    isCapture = capture;
+    isDoublePush = doublePawn;
+    isKingCastle = kc;
+    isQueenCastle = qc;
+    isEP = ep;
+    isKnightPromo = knightp;
+    isBishopPromo = bishopp;
+    isRookPromo = rookp;
+    isQueenPromo = queenp;
+  }
 };

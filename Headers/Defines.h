@@ -1,4 +1,5 @@
 
+
 #define   BOARD_SIZE  64
 #define   BOARD_WIDTH 8
 
@@ -64,6 +65,20 @@
 
 
 #define   A8H1      0x0102040810204080
+
+#define   WP  0
+#define   BP  1
+#define   WN  2
+#define   BN  3
+#define   WB  4
+#define   BB  5
+#define   WR  6
+#define   BR  7
+#define   WQ  8
+#define   BQ  9
+#define   WK  10
+#define   BK  11
+
 
 
 /*
